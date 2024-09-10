@@ -20,7 +20,7 @@ vared -p "Should existing zsh history be imported? " IMPORT_HISTORY
 # Download the dot files.
 if [ ! -d "$INSTALL_DIR" ]; then
   local GIT_REMOTE="ssh"
-  vared -p "Should the git remote use HTTPS (no auth required) or SSH? " INSTALL_DIR
+  vared -p "Should the git remote use HTTPS (no auth required) or SSH? " GIT_REMOTE
 
   echo ""
   echo "Cloning into $INSTALL_DIR..."
