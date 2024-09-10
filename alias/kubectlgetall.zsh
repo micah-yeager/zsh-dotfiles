@@ -1,5 +1,6 @@
-if ! type "kubectl" > /dev/null; then
-  [ "$DOT_FILES_DEBUG" ] && echo "kubectl not found, skipping initialization."
+local TARGET="kubectl"
+if ! type "$TARGET" > /dev/null; then
+  [ "$DOT_FILES_DEBUG" ] && echo "$TARGET not found, skipping initialization."
   return
 fi
 

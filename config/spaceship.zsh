@@ -1,11 +1,11 @@
-local SPACESHIP_OPT="$HOMEBREW_PREFIX/opt/spaceship"
-if [ ! -d "$SPACESHIP_OPT" ]; then
-  [ "$DOT_FILES_DEBUG" ] && echo "$SPACESHIP_OPT not found, skipping initialization."
+local TARGET="$HOMEBREW_PREFIX/opt/spaceship"
+if [ ! -d "${TARGET}" ]; then
+  [ "$DOT_FILES_DEBUG" ] && echo "${TARGET} not found, skipping initialization."
   return
 fi
 
 source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-source "$SPACESHIP_OPT/spaceship.zsh"
+source "${TARGET}/spaceship.zsh"
 
 export SPACESHIP_GCLOUD_SHOW=false
 export SPACESHIP_DOCKER_SHOW=false

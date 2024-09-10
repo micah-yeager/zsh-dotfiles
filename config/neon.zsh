@@ -1,5 +1,6 @@
-if ! type "neon" > /dev/null; then
-  [ "$DOT_FILES_DEBUG" ] && echo "neon not found, skipping initialization."
+TARGET="neon"
+if ! type "$TARGET" > /dev/null; then
+  [ "$DOT_FILES_DEBUG" ] && echo "$TARGET not found, skipping initialization."
   return
 fi
 
