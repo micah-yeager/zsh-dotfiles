@@ -14,7 +14,23 @@ local INSTALL_DIR="$HOME/dev/zsh-dotfiles"
 vared -p "Where should the dot files be installed? " INSTALL_DIR
 local IMPORT_HISTORY=y
 vared -p "Should existing zsh history be imported? " IMPORT_HISTORY
+local INSTALL_AUTO_CONFIG_DEPS=y
+vared -p "Should terminal-specific dependencies be auto-installed? " INSTALL_AUTO_CONFIG_DEPS
 echo ""
+
+# Install missing dependencies.
+if [ "$INSTALL_AUTO_CONFIG_DEPS" = "y" ]; then
+  # Homebrew
+  if [ -d "/opt/homebrew" ] || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  # eza
+  type eza > /dev/null || brew install eza
+  # Oh My Zsh
+  [ -d "$HOME/.oh-my-zsh" ] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  # Spaceship prompt
+  [ -d "$HOMEBREW_PREFIX/opt/spaceship" ] || brew install spaceship
+  # zsh-syntax-highlighting
+  [ -d "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting" ] || brew install zsh-syntax-highlighting
+fi
 
 # Download the dot files.
 if [ ! -d "${INSTALL_DIR}" ]; then
