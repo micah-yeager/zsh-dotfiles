@@ -4,16 +4,16 @@
 # - Only if an interactive shell
 
 # Configuration
-source ./config/homebrew.zsh
-source ./config/oh-my-zsh.zsh
-source ./config/spaceship.zsh
+source "$ZDOTDIR/config/homebrew.zsh"
+source "$ZDOTDIR/config/oh-my-zsh.zsh"
+source "$ZDOTDIR/config/spaceship.zsh"
 
-source ./config/neon.zsh
-source ./config/nvm.zsh
+source "$ZDOTDIR/config/neon.zsh"
+source "$ZDOTDIR/config/nvm.zsh"
 
 # Aliases
-source ./alias/kubectlgetall.zsh
+source "$ZDOTDIR/alias/kubectlgetall.zsh"
 
 if [ -f ./zshrc.local ]; then
-  source ./zshrc.local
+  source "$ZDOTDIR/zshrc.local"
 fi

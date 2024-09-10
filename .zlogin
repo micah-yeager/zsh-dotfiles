@@ -3,5 +3,5 @@
 # - Only if a login shell
 
 # Aliases
-source ./alias/eza.zsh
-source ./alias/freeport.zsh
+source "$ZDOTDIR/alias/eza.zsh"
+source "$ZDOTDIR/alias/freeport.zsh"
