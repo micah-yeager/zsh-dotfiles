@@ -15,5 +15,5 @@ source ./config/nvm.zsh
 source ./alias/kubectlgetall.zsh
 
 if [ -f ./zshrc.local ]; then
-	source ./zshrc.local
+  source ./zshrc.local
 fi
