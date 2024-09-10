@@ -10,7 +10,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Autocompletions
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+  FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH"
 
   autoload -Uz compinit
     rm -f ~/.zcompdump; compinit -u
