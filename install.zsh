@@ -24,6 +24,8 @@ if [ "$INSTALL_AUTO_CONFIG_DEPS" = "y" ]; then
   if [ -d "/opt/homebrew" ] || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   # eza
   type eza > /dev/null || brew install eza
+  # Nerd font
+  brew list | grep -q font-jetbrains-mono-nerd-font || brew install font-jetbrains-mono-nerd-font
   # Oh My Zsh
   [ -d "$HOME/.oh-my-zsh" ] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   # Spaceship prompt
