@@ -48,7 +48,7 @@ if [ "$INSTALL_AUTO_CONFIG_DEPS" = "y" ]; then
   # Nerd font
   brew list | grep -q font-jetbrains-mono-nerd-font || brew install font-jetbrains-mono-nerd-font
   # Oh My Zsh
-  [ -d "$HOME/.oh-my-zsh" ] || sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  [ -d "$HOME/.oh-my-zsh" ] || CHSH=no RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   # Spaceship prompt
   [ -d "$HOMEBREW_PREFIX/opt/spaceship" ] || brew install spaceship
   # zsh-syntax-highlighting
