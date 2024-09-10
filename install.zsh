@@ -16,13 +16,13 @@ local INSTALL_AUTO_CONFIG_DEPS=y
 vared -p "Should terminal-specific dependencies be auto-installed? " INSTALL_AUTO_CONFIG_DEPS
 local IMPORT_HISTORY=y
 vared -p "Should existing zsh history be imported? " IMPORT_HISTORY
-echo ""
 
 # Download the dot files.
 if [ ! -d "$INSTALL_DIR" ]; then
   local GIT_REMOTE="ssh"
   vared -p "Should the git remote use HTTPS (no auth required) or SSH? " INSTALL_DIR
 
+  echo ""
   echo "Cloning into $INSTALL_DIR..."
   if [ "$GIT_REMOTE" = "ssh" ]; then
     git clone "$GIT_SSH" "$INSTALL_DIR"
@@ -31,6 +31,7 @@ if [ ! -d "$INSTALL_DIR" ]; then
   fi
   echo "Done."
 else
+  echo ""
   echo "Already installed, pulling latest changes..."
   git -C "$INSTALL_DIR" pull
   echo "Done."
