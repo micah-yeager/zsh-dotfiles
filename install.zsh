@@ -6,6 +6,9 @@ if [[ ! -v ZSH_VERSION ]]; then
   exit 1
 fi
 
+local GIT_HTTPS="https://github.com/micah-yeager/zsh-dotfiles.git"
+local GIT_SSH="git@github.com:micah-yeager/zsh-dotfiles.git"
+
 # User input
 local INSTALL_DIR="$HOME/dev/zsh-dotfiles"
 vared -p "Where should the dot files be installed? " INSTALL_DIR
@@ -15,8 +18,15 @@ echo ""
 
 # Download the dot files.
 if [ ! -d "${INSTALL_DIR}" ]; then
+  local GIT_REMOTE="ssh"
+  vared -p "Should the git remote use HTTPS (no auth required) or SSH? " INSTALL_DIR
+
   echo "Cloning into ${INSTALL_DIR}..."
-  git clone "git@github.com:micah-yeager/zsh-dotfiles.git" "${INSTALL_DIR}"
+  if [ "$GIT_REMOTE" = "ssh" ]; then
+    git clone "$GIT_SSH" "${INSTALL_DIR}"
+  else
+    git clone "$GIT_HTTPS" "${INSTALL_DIR}"
+  fi
   echo "Done."
 else
   echo "Already installed, pulling latest changes..."
