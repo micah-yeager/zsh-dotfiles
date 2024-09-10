@@ -11,7 +11,7 @@ curl "https://raw.githubusercontent.com/micah-yeager/zsh-dotfiles/main/install.z
 
 ## Features
 
-### Supported items
+### Supported auto-configurations
 
 - [eza](https://eza.rocks/)
 - [Homebrew](https://brew.sh/)
