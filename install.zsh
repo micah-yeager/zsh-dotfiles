@@ -20,6 +20,7 @@ echo ""
 
 # Install missing dependencies.
 if [ "$INSTALL_AUTO_CONFIG_DEPS" = "y" ]; then
+  echo "Installing dependencies..."
   # Homebrew
   if [ -d "/opt/homebrew" ] || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   # eza
@@ -32,7 +33,11 @@ if [ "$INSTALL_AUTO_CONFIG_DEPS" = "y" ]; then
   [ -d "$HOMEBREW_PREFIX/opt/spaceship" ] || brew install spaceship
   # zsh-syntax-highlighting
   [ -d "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting" ] || brew install zsh-syntax-highlighting
+  echo "Done."
+else
+  echo "Skipping installing dependencies per user input."
 fi
+echo ""
 
 # Download the dot files.
 if [ ! -d "$INSTALL_DIR" ]; then
