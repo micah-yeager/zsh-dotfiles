@@ -41,7 +41,7 @@ echo ""
 if [ "$INSTALL_AUTO_CONFIG_DEPS" = "y" ]; then
   echo "Installing dependencies..."
   # Homebrew
-  if [ -d "/opt/homebrew" ] || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  [ -d "/opt/homebrew" ] || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   # eza
   type eza > /dev/null || brew install eza
   # Nerd font
