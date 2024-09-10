@@ -18,6 +18,25 @@ local INSTALL_AUTO_CONFIG_DEPS=y
 vared -p "Should terminal-specific dependencies be auto-installed? " INSTALL_AUTO_CONFIG_DEPS
 echo ""
 
+# Download the dot files.
+if [ ! -d "$INSTALL_DIR" ]; then
+  local GIT_REMOTE="ssh"
+  vared -p "Should the git remote use HTTPS (no auth required) or SSH? " INSTALL_DIR
+
+  echo "Cloning into $INSTALL_DIR..."
+  if [ "$GIT_REMOTE" = "ssh" ]; then
+    git clone "$GIT_SSH" "$INSTALL_DIR"
+  else
+    git clone "$GIT_HTTPS" "$INSTALL_DIR"
+  fi
+  echo "Done."
+else
+  echo "Already installed, pulling latest changes..."
+  git -C "$INSTALL_DIR" pull
+  echo "Done."
+fi
+echo ""
+
 # Install missing dependencies.
 if [ "$INSTALL_AUTO_CONFIG_DEPS" = "y" ]; then
   echo "Installing dependencies..."
@@ -36,25 +55,6 @@ if [ "$INSTALL_AUTO_CONFIG_DEPS" = "y" ]; then
   echo "Done."
 else
   echo "Skipping installing dependencies per user input."
-fi
-echo ""
-
-# Download the dot files.
-if [ ! -d "$INSTALL_DIR" ]; then
-  local GIT_REMOTE="ssh"
-  vared -p "Should the git remote use HTTPS (no auth required) or SSH? " INSTALL_DIR
-
-  echo "Cloning into $INSTALL_DIR..."
-  if [ "$GIT_REMOTE" = "ssh" ]; then
-    git clone "$GIT_SSH" "$INSTALL_DIR"
-  else
-    git clone "$GIT_HTTPS" "$INSTALL_DIR"
-  fi
-  echo "Done."
-else
-  echo "Already installed, pulling latest changes..."
-  git -C "$INSTALL_DIR" pull
-  echo "Done."
 fi
 echo ""
 
