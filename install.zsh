@@ -60,18 +60,18 @@ fi
 echo ""
 
 # Point zsh to use the dot files.
-local TARGET_STRING="export ZDOTDIR=$INSTALL_DIR"
-local TARGET_FILE="$HOME/.zshenv"
-if [ ! -f "$TARGET_FILE" ]; then
-  echo -n "Creating $TARGET_FILE... "
-  echo "$TARGET_STRING" > "$TARGET_FILE"
+local ZSH_ENV_EXPORT="export ZDOTDIR=$INSTALL_DIR"
+local ZSH_ENV_FILE="$HOME/.zshenv"
+if [ ! -f "$ZSH_ENV_FILE" ]; then
+  echo -n "Creating $ZSH_ENV_FILE... "
+  echo "$ZSH_ENV_EXPORT" > "$ZSH_ENV_FILE"
   echo "Done."
-elif ! grep -qxF "$TARGET_STRING" "${TARGET_FILE}"; then
-  echo -n "Updating ${TARGET_FILE}... "
-  echo "$TARGET_STRING" >> "$TARGET_FILE"
+elif ! grep -qxF "$ZSH_ENV_EXPORT" "${ZSH_ENV_FILE}"; then
+  echo -n "Updating ${ZSH_ENV_FILE}... "
+  echo "$ZSH_ENV_EXPORT" >> "$ZSH_ENV_FILE"
   echo "Done."
 else
-  echo "$TARGET_FILE is already up-to-date, leaving it alone."
+  echo "$ZSH_ENV_FILE is already up-to-date, leaving it alone."
 fi
 
 # Create locals file.
