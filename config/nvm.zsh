@@ -1,6 +1,6 @@
 local TARGET="$HOME/.nvm"
-if [ ! -d "${TARGET}" ]; then
-  [ "$DOT_FILES_DEBUG" ] && echo "${TARGET} not found, skipping initialization."
+if [ ! -d "$TARGET" ]; then
+  [ "$DOT_FILES_DEBUG" ] && echo "$TARGET not found, skipping initialization."
   return
 fi
 

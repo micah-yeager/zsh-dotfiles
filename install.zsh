@@ -35,20 +35,20 @@ if [ "$INSTALL_AUTO_CONFIG_DEPS" = "y" ]; then
 fi
 
 # Download the dot files.
-if [ ! -d "${INSTALL_DIR}" ]; then
+if [ ! -d "$INSTALL_DIR" ]; then
   local GIT_REMOTE="ssh"
   vared -p "Should the git remote use HTTPS (no auth required) or SSH? " INSTALL_DIR
 
-  echo "Cloning into ${INSTALL_DIR}..."
+  echo "Cloning into $INSTALL_DIR..."
   if [ "$GIT_REMOTE" = "ssh" ]; then
-    git clone "$GIT_SSH" "${INSTALL_DIR}"
+    git clone "$GIT_SSH" "$INSTALL_DIR"
   else
-    git clone "$GIT_HTTPS" "${INSTALL_DIR}"
+    git clone "$GIT_HTTPS" "$INSTALL_DIR"
   fi
   echo "Done."
 else
   echo "Already installed, pulling latest changes..."
-  git -C "${INSTALL_DIR}" pull
+  git -C "$INSTALL_DIR" pull
   echo "Done."
 fi
 echo ""
@@ -56,23 +56,23 @@ echo ""
 # Point zsh to use the dot files.
 local TARGET_STRING="export ZDOTDIR=$INSTALL_DIR"
 local TARGET_FILE="$HOME/.zshenv"
-if [ ! -f "${TARGET_FILE}" ]; then
-  echo -n "Creating ${TARGET_FILE}... "
-  echo "$TARGET_STRING" > "${TARGET_FILE}"
+if [ ! -f "$TARGET_FILE" ]; then
+  echo -n "Creating $TARGET_FILE... "
+  echo "$TARGET_STRING" > "$TARGET_FILE"
   echo "Done."
 elif ! grep -qxF "$TARGET_STRING" "${TARGET_FILE}"; then
   echo -n "Updating ${TARGET_FILE}... "
-  echo "$TARGET_STRING" >> "${TARGET_FILE}"
+  echo "$TARGET_STRING" >> "$TARGET_FILE"
   echo "Done."
 else
-  echo "${TARGET_FILE} is already up-to-date, leaving it alone."
+  echo "$TARGET_FILE is already up-to-date, leaving it alone."
 fi
 
 # Create locals file.
-local LOCALS_FILE="${INSTALL_DIR}/.zshrc.local"
-if [ ! -f "${LOCALS_FILE}" ]; then
-  echo -n "Creating ${LOCALS_FILE}... "
-  touch "${LOCALS_FILE}"
+local LOCALS_FILE="$INSTALL_DIR/.zshrc.local"
+if [ ! -f "$LOCALS_FILE" ]; then
+  echo -n "Creating $LOCALS_FILE... "
+  touch "$LOCALS_FILE"
   echo "Done."
 else
   echo "Locals file already exists, leaving it alone."
@@ -81,13 +81,13 @@ fi
 # Symlink locals file.
 local TARGET_RC_FILE="$HOME/.zshrc"
 local SOURCE_RC_FILE="$INSTALL_DIR/.zshrc.local"
-if [[ -f "${TARGET_RC_FILE}" && ! -L "${TARGET_RC_FILE}" ]]; then
-  echo -n "Moving existing ${TARGET_RC_FILE} to ${TARGET_RC_FILE}.old... "
-  mv "${TARGET_RC_FILE}" "${TARGET_RC_FILE}.old"
+if [[ -f "$TARGET_RC_FILE" && ! -L "$TARGET_RC_FILE" ]]; then
+  echo -n "Moving existing $TARGET_RC_FILE to $TARGET_RC_FILE.old... "
+  mv "$TARGET_RC_FILE" "$TARGET_RC_FILE.old"
   echo "Done."
 fi
-echo -n "Linking ${SOURCE_RC_FILE} to ${TARGET_RC_FILE}... "
-ln -sf "${SOURCE_RC_FILE}" "${TARGET_RC_FILE}"
+echo -n "Linking $SOURCE_RC_FILE to $TARGET_RC_FILE... "
+ln -sf "$SOURCE_RC_FILE" "$TARGET_RC_FILE"
 echo "Done."
 
 # Import existing history

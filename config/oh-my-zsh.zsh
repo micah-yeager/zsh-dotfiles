@@ -1,6 +1,6 @@
 local TARGET="$HOME/.oh-my-zsh"
-if [ ! -d "${TARGET}" ]; then
-  [ "$DOT_FILES_DEBUG" ] && echo "${TARGET} not found, skipping initialization."
+if [ ! -d "$TARGET" ]; then
+  [ "$DOT_FILES_DEBUG" ] && echo "$TARGET not found, skipping initialization."
   return
 fi
 
@@ -8,7 +8,7 @@ fi
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
-export ZSH="${TARGET}"
+export ZSH="$TARGET"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
