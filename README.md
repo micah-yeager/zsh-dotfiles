@@ -6,7 +6,7 @@ Personal zsh configuration for macOS. Auto-configures based on what's available 
 Run the following in a terminal:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/micah-yeager/zsh-dotfiles/main/install.zsh | zsh 
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/micah-yeager/zsh-dotfiles/main/install.zsh)"
 ```
 
 ## Features
