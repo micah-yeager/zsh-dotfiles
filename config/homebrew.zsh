@@ -13,5 +13,5 @@ if type brew &>/dev/null; then
   FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH"
 
   autoload -Uz compinit
-    rm -f ~/.zcompdump; compinit -u
+  rm -f ~/.zcompdump; compinit -u
 fi
