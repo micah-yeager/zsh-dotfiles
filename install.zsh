@@ -97,9 +97,10 @@ ln -sf "$SOURCE_RC_FILE" "$TARGET_RC_FILE"
 echo "Done."
 
 # Import existing history
-if [ "$IMPORT_HISTORY" = "y" ]; then
+local HISTORY_FILE="$HOME/.zsh_history"
+if [ "$IMPORT_HISTORY" = "y" && -f "$HISTORY_FILE"  ]; then
   echo -n "Importing history... "
-  yes | cp -f "$HOME/.zsh_history" "$INSTALL_DIR/.zsh_history"
+  yes | cp -f "$HISTORY_FILE" "$INSTALL_DIR/.zsh_history"
   echo "Done."
 else
   echo "Skipping importing history per user input."
