@@ -9,6 +9,44 @@ Run the following in a terminal:
 curl "https://raw.githubusercontent.com/micah-yeager/zsh-dotfiles/main/install.zsh" | zsh 
 ```
 
+## Features
+
+### Supported items
+
+- [eza](https://eza.rocks/)
+- [Homebrew](https://brew.sh/)
+- [Neon](https://neon.tech/docs/reference/neon-cli)
+- [nvm](https://github.com/nvm-sh/nvm)
+- [Oh My Zsh](https://ohmyz.sh/)
+- [Spaceship](https://spaceship-prompt.sh/)
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+
+### Aliases
+
+#### `freeport`
+
+> Aliases: `fp`
+
+Finds and kills the process using the provided port.
+
+Usage:
+
+```sh
+freeport 80
+```
+
+#### `kubectlgetall`
+
+> Aliases: `kga`
+
+Finds all resources across all namespaces using `kubectl`.
+
+Usage:
+
+```sh
+kubectlgetall
+```
+
 ## Troubleshooting
 
 Add the following variable to `~/.zshenv`:
