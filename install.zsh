@@ -1,13 +1,13 @@
 #!/bin/zsh
 
+local GIT_HTTPS="https://github.com/micah-yeager/zsh-dotfiles.git"
+local GIT_SSH="git@github.com:micah-yeager/zsh-dotfiles.git"
+
 # Pre-flight checks.
 if [ ! "$ZSH_VERSION" ]; then
   echo "ERROR: This script doesn't seem to be running with zsh, exiting." >&2
   exit 1
 fi
-
-local GIT_HTTPS="https://github.com/micah-yeager/zsh-dotfiles.git"
-local GIT_SSH="git@github.com:micah-yeager/zsh-dotfiles.git"
 
 # User input
 local INSTALL_DIR="$HOME/dev/zsh-dotfiles"
