@@ -1,2 +1,2 @@
 # zsh-dotfiles
-zsh configuration for macOS.
+Personal zsh configuration for macOS.
