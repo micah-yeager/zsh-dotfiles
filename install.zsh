@@ -16,7 +16,7 @@ echo ""
 # Download the dot files.
 if [ ! -d "${INSTALL_DIR}" ]; then
   echo "Cloning into ${INSTALL_DIR}..."
-  git clone "https://github.com/micah-yeager/zsh-dotfiles.git" "${INSTALL_DIR}"
+  git clone "git@github.com:micah-yeager/zsh-dotfiles.git" "${INSTALL_DIR}"
   echo "Done."
 else
   echo "Already installed, pulling latest changes..."
