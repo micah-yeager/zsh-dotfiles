@@ -4,7 +4,6 @@ if [ ! -d "${TARGET}" ]; then
   return
 fi
 
-source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "${TARGET}/spaceship.zsh"
 
 export SPACESHIP_GCLOUD_SHOW=false

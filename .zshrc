@@ -7,6 +7,7 @@
 source "$ZDOTDIR/config/homebrew.zsh"
 source "$ZDOTDIR/config/oh-my-zsh.zsh"
 source "$ZDOTDIR/config/spaceship.zsh"
+source "$ZDOTDIR/config/zsh-syntax-highlighting.zsh"
 
 source "$ZDOTDIR/config/neon.zsh"
 source "$ZDOTDIR/config/nvm.zsh"
