@@ -1,8 +1,8 @@
 #!/bin/zsh
 
 # Pre-flight checks.
-if [[ ! -v ZSH_VERSION ]]; then
-  echo "\033[0;31mThis script doesn't seem to be running with zsh, exiting.\033[0m" >&2
+if [ ! "$ZSH_VERSION" ]; then
+  echo "ERROR: This script doesn't seem to be running with zsh, exiting." >&2
   exit 1
 fi
 
