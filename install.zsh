@@ -89,27 +89,34 @@ else
   echo "$ZSH_ENV_FILE is already up-to-date, leaving it alone."
 fi
 
-# Create locals file.
-local LOCALS_FILE="$INSTALL_DIR/.zshrc.local"
-if [ ! -f "$LOCALS_FILE" ]; then
-  echo -n "Creating $LOCALS_FILE... "
-  touch "$LOCALS_FILE"
-  echo "Done."
-else
-  echo "Locals file already exists, leaving it alone."
-fi
+# Create and symlink locals files.
+for ZSH_FILENAME (.zlogin .zprofile .zshrc); do
+  local TARGET_ZSHRC_FILE="$HOME/$ZSH_FILENAME"
+  local SOURCE_ZSHRC_FILE="$INSTALL_DIR/$ZSH_FILENAME.local"
 
-# Symlink locals file.
-local TARGET_RC_FILE="$HOME/.zshrc"
-local SOURCE_RC_FILE="$INSTALL_DIR/.zshrc.local"
-if [[ -f "$TARGET_RC_FILE" && ! -L "$TARGET_RC_FILE" ]]; then
-  echo -n "Moving existing $TARGET_RC_FILE to $TARGET_RC_FILE.old... "
-  mv "$TARGET_RC_FILE" "$TARGET_RC_FILE.old"
+  # Create local files if not yet initialized.
+  if [ ! -f "$SOURCE_ZSHRC_FILE" ]; then
+    echo -n "Creating $SOURCE_ZSHRC_FILE from template... "
+    cp "$INSTALL_DIR/template/$ZSH_FILENAME.local" "$SOURCE_ZSHRC_FILE"
+    echo "Done."
+  else
+    echo "$SOURCE_ZSHRC_FILE already exists, leaving it alone."
+  fi
+
+  # Move any existing files in the user's home.
+  if [[ -f "$TARGET_ZSHRC_FILE" && ! -L "$TARGET_ZSHRC_FILE" ]]; then
+    local OLD_ZSH_FILE="$TARGET_ZSHRC_FILE.old"
+
+    echo -n "Moving existing $TARGET_ZSHRC_FILE to $OLD_ZSH_FILE... "
+    mv "$TARGET_ZSHRC_FILE" "$OLD_ZSH_FILE"
+    echo "Done."
+  fi
+
+  # Link the dot files version to the user's home.
+  echo -n "Linking $SOURCE_ZSHRC_FILE to $TARGET_ZSHRC_FILE... "
+  ln -sf "$SOURCE_ZSHRC_FILE" "$TARGET_ZSHRC_FILE"
   echo "Done."
-fi
-echo -n "Linking $SOURCE_RC_FILE to $TARGET_RC_FILE... "
-ln -sf "$SOURCE_RC_FILE" "$TARGET_RC_FILE"
-echo "Done."
+done
 
 # Import existing history
 local HISTORY_FILE="$HOME/.zsh_history"

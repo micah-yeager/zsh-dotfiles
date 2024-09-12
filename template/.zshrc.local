@@ -1,1 +1,6 @@
-# This file is a symlink to .zshrc.local in the dot files folder.
+# This file is a symlink to .zshrc.local in the $ZDOTDIR folder.
+
+if [ "$DOT_FILES_LOADED_ZSHRC_LOCAL" ]; then
+  [ "$DOT_FILES_DEBUG" ] && echo ".zshrc.local already loaded, skipping initialization."
+fi
+export DOT_FILES_LOADED_ZSHRC_LOCAL=true

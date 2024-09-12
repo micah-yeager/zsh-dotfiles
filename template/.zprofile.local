@@ -1,0 +1,6 @@
+# This file is a symlink to .zprofile.local in the $ZDOTDIR folder.
+
+if [ "$DOT_FILES_LOADED_ZPROFILE_LOCAL" ]; then
+  [ "$DOT_FILES_DEBUG" ] && echo ".zprofile.local already loaded, skipping initialization."
+fi
+export DOT_FILES_LOADED_ZPROFILE_LOCAL=true

@@ -1,0 +1,6 @@
+# This file is a symlink to .zlogin.local in the $ZDOTDIR folder.
+
+if [ "$DOT_FILES_LOADED_ZLOGIN_LOCAL" ]; then
+  [ "$DOT_FILES_DEBUG" ] && echo ".zlogin.local already loaded, skipping initialization."
+fi
+export DOT_FILES_LOADED_ZLOGIN_LOCAL=true
