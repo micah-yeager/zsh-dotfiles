@@ -18,6 +18,7 @@ source "$ZDOTDIR/config/nvm.zsh"
 # Aliases
 source "$ZDOTDIR/alias/kubectlgetall.zsh"
 
-if [ -f ./zshrc.local ]; then
-  source "$ZDOTDIR/zshrc.local"
+# Local
+if [ -f "$ZDOTDIR/.zshrc.local" ]; then
+  source "$ZDOTDIR/.zshrc.local"
 fi
