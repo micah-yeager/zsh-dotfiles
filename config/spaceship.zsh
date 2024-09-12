@@ -2,7 +2,10 @@ local TARGET="$HOMEBREW_PREFIX/opt/spaceship"
 if [ ! -d "$TARGET" ]; then
   [ "$DOT_FILES_DEBUG" ] && echo "$TARGET not found, skipping initialization."
   return
+elif [ "$DOT_FILES_LOADED_SPACESHIP" ]; then
+  [ "$DOT_FILES_DEBUG" ] && echo "$TARGET already loaded, skipping initialization."
 fi
+export DOT_FILES_LOADED_SPACESHIP=true
 
 source "$TARGET/spaceship.zsh"
 

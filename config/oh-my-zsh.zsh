@@ -2,7 +2,10 @@ local TARGET="$HOME/.oh-my-zsh"
 if [ ! -d "$TARGET" ]; then
   [ "$DOT_FILES_DEBUG" ] && echo "$TARGET not found, skipping initialization."
   return
+elif [ "$DOT_FILES_LOADED_OH_MY_ZSH" ]; then
+  [ "$DOT_FILES_DEBUG" ] && echo "$TARGET already loaded, skipping initialization."
 fi
+export DOT_FILES_LOADED_OH_MY_ZSH=true
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH

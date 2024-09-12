@@ -2,7 +2,10 @@ TARGET="neon"
 if ! type "$TARGET" > /dev/null; then
   [ "$DOT_FILES_DEBUG" ] && echo "$TARGET not found, skipping initialization."
   return
+elif [ "$DOT_FILES_LOADED_NEON" ]; then
+  [ "$DOT_FILES_DEBUG" ] && echo "$TARGET already loaded, skipping initialization."
 fi
+export DOT_FILES_LOADED_NEON=true
 
 #compdef neon
 ###-begin-neon-completions-###
