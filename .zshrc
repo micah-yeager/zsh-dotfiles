@@ -9,11 +9,12 @@ source "$ZDOTDIR/config/powerlevel10k-preflight.zsh"
 
 # Configuration
 source "$ZDOTDIR/config/homebrew.zsh"
-source "$ZDOTDIR/config/powerlevel10k.zsh"
 source "$ZDOTDIR/config/zsh-syntax-highlighting.zsh"
 
 source "$ZDOTDIR/config/neon.zsh"
 source "$ZDOTDIR/config/nvm.zsh"
+
+source "$ZDOTDIR/config/powerlevel10k.zsh"
 
 # Aliases
 source "$ZDOTDIR/alias/eza.zsh"
