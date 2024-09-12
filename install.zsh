@@ -41,6 +41,24 @@ echo ""
 # Install missing dependencies.
 if [ "$INSTALL_AUTO_CONFIG_DEPS" = "y" ]; then
   echo "Installing dependencies..."
+
+  # Fonts
+  local INSTALLED_FONTS=$(system_profiler SPFontsDataType)
+  local TARGET_FONT_DIR="$HOME/Library/Fonts"
+  if ! grep -q "MesloLGS-NF-Regular"; then
+    curl -fsSL "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf" -O "$TARGET_FONT_DIR/MesloLGS-NF-Regular.ttf"
+  fi
+  if ! grep -q "MesloLGS-NF-Bold"; then
+    curl -fsSL "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf" -O "$TARGET_FONT_DIR/MesloLGS-NF-Bold.ttf"
+  fi
+  if ! grep -q "MesloLGS-NF-Italic"; then
+    curl -fsSL "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf" -O "$TARGET_FONT_DIR/MesloLGS-NF-Italic.ttf"
+  fi
+  if ! grep -q "MesloLGS-NF-Bold-Italic"; then
+    curl -fsSL "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf" -O "$TARGET_FONT_DIR/MesloLGS-NF-Bold-Italic.ttf"
+  fi
+
+
   # Homebrew
   [ -d "/opt/homebrew" ] || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   # eza
@@ -49,6 +67,7 @@ if [ "$INSTALL_AUTO_CONFIG_DEPS" = "y" ]; then
   [ -d "$HOMEBREW_PREFIX/opt/powerlevel10k" ] || brew install powerlevel10k
   # zsh-syntax-highlighting
   [ -d "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting" ] || brew install zsh-syntax-highlighting
+
   echo "Done."
 else
   echo "Skipping installing dependencies per user input."
