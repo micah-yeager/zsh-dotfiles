@@ -94,7 +94,7 @@ echo "Done."
 
 # Import existing history
 local HISTORY_FILE="$HOME/.zsh_history"
-if [ "$IMPORT_HISTORY" = "y" && -f "$HISTORY_FILE"  ]; then
+if [[ "$IMPORT_HISTORY" = "y" && -f "$HISTORY_FILE" ]]; then
   echo -n "Importing history... "
   yes | cp -f "$HISTORY_FILE" "$INSTALL_DIR/.zsh_history"
   echo "Done."
