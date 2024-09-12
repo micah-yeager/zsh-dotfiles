@@ -16,6 +16,8 @@ source "$ZDOTDIR/config/neon.zsh"
 source "$ZDOTDIR/config/nvm.zsh"
 
 # Aliases
+source "$ZDOTDIR/alias/eza.zsh"
+source "$ZDOTDIR/alias/freeport.zsh"
 source "$ZDOTDIR/alias/kubectlgetall.zsh"
 
 # Local
