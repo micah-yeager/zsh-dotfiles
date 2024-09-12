@@ -3,10 +3,13 @@
 # - Before .zlogin
 # - Only if an interactive shell
 
+# Preflight
+source "$ZDOTDIR/config/zle.zsh"
+source "$ZDOTDIR/config/powerlevel10k-preflight.zsh"
+
 # Configuration
 source "$ZDOTDIR/config/homebrew.zsh"
-source "$ZDOTDIR/config/oh-my-zsh.zsh"
-source "$ZDOTDIR/config/spaceship.zsh"
+source "$ZDOTDIR/config/powerlevel10k.zsh"
 source "$ZDOTDIR/config/zsh-syntax-highlighting.zsh"
 
 source "$ZDOTDIR/config/neon.zsh"

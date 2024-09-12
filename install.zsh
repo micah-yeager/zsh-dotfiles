@@ -45,12 +45,8 @@ if [ "$INSTALL_AUTO_CONFIG_DEPS" = "y" ]; then
   [ -d "/opt/homebrew" ] || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   # eza
   type eza > /dev/null || brew install eza
-  # Nerd font
-  brew list | grep -q font-jetbrains-mono-nerd-font || brew install font-jetbrains-mono-nerd-font
-  # Oh My Zsh
-  [ -d "$HOME/.oh-my-zsh" ] || CHSH=no RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  # Spaceship prompt
-  [ -d "$HOMEBREW_PREFIX/opt/spaceship" ] || brew install spaceship
+  # powerlevel10k
+  [ -d "$HOMEBREW_PREFIX/opt/powerlevel10k" ] || brew install powerlevel10k
   # zsh-syntax-highlighting
   [ -d "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting" ] || brew install zsh-syntax-highlighting
   echo "Done."
