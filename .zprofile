@@ -10,12 +10,15 @@ source "$ZDOTDIR/config/zle.zsh"
 # shell IS interactive.
 source "$ZDOTDIR/config/powerlevel10k-preflight.zsh"
 
-# Config
+# Configuration
 source "$ZDOTDIR/config/homebrew.zsh"
 
 source "$ZDOTDIR/config/libpq.zsh"
 source "$ZDOTDIR/config/nvm.zsh"
 source "$ZDOTDIR/config/pnpm.zsh"
+
+# Don't source "$ZDOTDIR/config/powerlevel10k.zsh", since that will be loaded
+# .zshrc last if an interactive shell.
 
 # Local
 if [ -f "$ZDOTDIR/.zprofile.local" ]; then
