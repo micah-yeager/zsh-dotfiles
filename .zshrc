@@ -4,19 +4,19 @@
 # - Only if an interactive shell
 
 # Preflight
-source "$ZDOTDIR/config/zle.zsh"
-source "$ZDOTDIR/config/powerlevel10k-preflight.zsh"
+source "$ZDOTDIR/loaders/zle.zsh"
+source "$ZDOTDIR/loaders/powerlevel10k-preflight.zsh"
 
-# Configuration
-source "$ZDOTDIR/config/homebrew.zsh"
-source "$ZDOTDIR/config/zsh-syntax-highlighting.zsh"
+# Loaders
+source "$ZDOTDIR/loaders/homebrew.zsh"
+source "$ZDOTDIR/loaders/zsh-syntax-highlighting.zsh"
 
-source "$ZDOTDIR/config/libpq.zsh"
-source "$ZDOTDIR/config/neon.zsh"
-source "$ZDOTDIR/config/nvm.zsh"
-source "$ZDOTDIR/config/pnpm.zsh"
+source "$ZDOTDIR/loaders/libpq.zsh"
+source "$ZDOTDIR/loaders/neon.zsh"
+source "$ZDOTDIR/loaders/nvm.zsh"
+source "$ZDOTDIR/loaders/pnpm.zsh"
 
-source "$ZDOTDIR/config/powerlevel10k.zsh" # Keep this last
+source "$ZDOTDIR/loaders/powerlevel10k.zsh" # Keep this last
 
 # Aliases
 source "$ZDOTDIR/aliases/eza.zsh"

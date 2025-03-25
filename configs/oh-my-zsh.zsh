@@ -1,18 +1,8 @@
-local DOT_FILES_LOAD_TARGET="$HOME/.oh-my-zsh"
-if [ ! -d "$DOT_FILES_LOAD_TARGET" ]; then
-  [ "$DOT_FILES_DEBUG" ] && echo "$DOT_FILES_LOAD_TARGET not found, skipping initialization."
-  return
-elif [ "$DOT_FILES_LOADED_OH_MY_ZSH" ]; then
-  [ "$DOT_FILES_DEBUG" ] && echo "$DOT_FILES_LOAD_TARGET already loaded, skipping initialization."
-  return
-fi
-export DOT_FILES_LOADED_OH_MY_ZSH=true
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your Oh My Zsh installation.
-export ZSH="$DOT_FILES_LOAD_TARGET"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,

@@ -9,5 +9,4 @@ fi
 export DOT_FILES_LOADED_POWERLEVEL10K=true
 
 source "$HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme"
-
-source "$ZDOTDIR/config/powerlevel10k-config.zsh"
+source "$ZDOTDIR/configs/powerlevel10k.zsh"

@@ -9,8 +9,4 @@ fi
 export DOT_FILES_LOADED_SPACESHIP=true
 
 source "$DOT_FILES_LOAD_TARGET/spaceship.zsh"
-
-export SPACESHIP_GCLOUD_SHOW=false
-export SPACESHIP_DOCKER_SHOW=false
-export SPACESHIP_DOCKER_COMPOSE_SHOW=false
-export SPACESHIP_GIT_STATUS_SHOW=false
+source "$ZDOTDIR/configs/spaceship.zsh"
