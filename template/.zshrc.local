@@ -2,5 +2,6 @@
 
 if [ "$DOT_FILES_LOADED_ZSHRC_LOCAL" ]; then
   [ "$DOT_FILES_DEBUG" ] && echo ".zshrc.local already loaded, skipping initialization."
+  return
 fi
 export DOT_FILES_LOADED_ZSHRC_LOCAL=true

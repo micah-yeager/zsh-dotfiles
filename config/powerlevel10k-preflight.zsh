@@ -1,5 +1,6 @@
 if [ "$DOT_FILES_LOADED_POWERLEVEL10K_PREFLIGHT" ]; then
   [ "$DOT_FILES_DEBUG" ] && echo "powerlevel10k preflight already loaded, skipping initialization."
+  return
 fi
 export DOT_FILES_LOADED_POWERLEVEL10K_PREFLIGHT=true
 

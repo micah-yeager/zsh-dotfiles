@@ -4,6 +4,7 @@ if [ ! -d "$TARGET" ]; then
   return
 elif [ "$DOT_FILES_LOADED_SPACESHIP" ]; then
   [ "$DOT_FILES_DEBUG" ] && echo "$TARGET already loaded, skipping initialization."
+  return
 fi
 export DOT_FILES_LOADED_SPACESHIP=true
 

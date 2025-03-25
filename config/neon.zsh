@@ -4,6 +4,7 @@ if ! type "$TARGET" > /dev/null; then
   return
 elif [ "$DOT_FILES_LOADED_NEON" ]; then
   [ "$DOT_FILES_DEBUG" ] && echo "$TARGET already loaded, skipping initialization."
+  return
 fi
 export DOT_FILES_LOADED_NEON=true
 

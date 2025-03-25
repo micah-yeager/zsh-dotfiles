@@ -2,5 +2,6 @@
 
 if [ "$DOT_FILES_LOADED_ZLOGIN_LOCAL" ]; then
   [ "$DOT_FILES_DEBUG" ] && echo ".zlogin.local already loaded, skipping initialization."
+  return
 fi
 export DOT_FILES_LOADED_ZLOGIN_LOCAL=true
