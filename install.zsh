@@ -43,6 +43,7 @@ if [ "$INSTALL_AUTO_CONFIG_DEPS" = "y" ]; then
   echo "Installing dependencies..."
 
   # Fonts
+  echo "  Installing fonts..."
   local INSTALLED_FONTS=$(system_profiler SPFontsDataType)
   local TARGET_FONT_DIR="$HOME/Library/Fonts"
   if ! echo "$INSTALLED_FONTS" | grep -q "MesloLGS-NF-Regular"; then
@@ -57,10 +58,14 @@ if [ "$INSTALL_AUTO_CONFIG_DEPS" = "y" ]; then
   if ! echo "$INSTALLED_FONTS" | grep -q "MesloLGS-NF-Bold-Italic"; then
     curl -fsSL "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf" -O "$TARGET_FONT_DIR/MesloLGS-NF-Bold-Italic.ttf"
   fi
+  echo "  Done."
 
+  echo "  Installing non-Homebrew packages..."
   # pnpm
   [ -d "$HOME/Library/pnpm" ] || curl -fsSL https://get.pnpm.io/install.sh | sh -
+  echo "  Done."
 
+  echo "  Installing Hombrew packages..."
   # Homebrew
   [ -d "/opt/homebrew" ] || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   # eza
@@ -71,6 +76,7 @@ if [ "$INSTALL_AUTO_CONFIG_DEPS" = "y" ]; then
   [ -d "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting" ] || brew install zsh-syntax-highlighting
   # libpq
   [ -d "$HOMEBREW_PREFIX/Cellar/libpq" ] || brew install libpq
+  echo "  Done."
 
   echo "Done."
 else
