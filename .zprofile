@@ -12,7 +12,10 @@ source "$ZDOTDIR/config/powerlevel10k-preflight.zsh"
 
 # Config
 source "$ZDOTDIR/config/homebrew.zsh"
+
+source "$ZDOTDIR/config/libpq.zsh"
 source "$ZDOTDIR/config/nvm.zsh"
+source "$ZDOTDIR/config/pnpm.zsh"
 
 # Local
 if [ -f "$ZDOTDIR/.zprofile.local" ]; then
