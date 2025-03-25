@@ -67,6 +67,8 @@ if [ "$INSTALL_AUTO_CONFIG_DEPS" = "y" ]; then
   [ -d "$HOMEBREW_PREFIX/opt/powerlevel10k" ] || brew install powerlevel10k
   # zsh-syntax-highlighting
   [ -d "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting" ] || brew install zsh-syntax-highlighting
+  # pnpm
+  [ -d "$HOME/Library/pnpm" ] || curl -fsSL https://get.pnpm.io/install.sh | sh -
 
   echo "Done."
 else

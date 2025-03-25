@@ -13,6 +13,7 @@ source "$ZDOTDIR/config/zsh-syntax-highlighting.zsh"
 
 source "$ZDOTDIR/config/neon.zsh"
 source "$ZDOTDIR/config/nvm.zsh"
+source "$ZDOTDIR/config/pnpm.zsh"
 
 source "$ZDOTDIR/config/powerlevel10k.zsh"
 
