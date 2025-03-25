@@ -4,24 +4,29 @@
 # - Only if an interactive shell
 
 # Preflight
-source "$ZDOTDIR/loaders/zle.zsh"
-source "$ZDOTDIR/loaders/powerlevel10k-preflight.zsh"
+source "$ZDOTDIR/utils/load.zsh"
+dot-files-load zle
+dot-files-load powerlevel10k-preflight
 
 # Loaders
-source "$ZDOTDIR/loaders/homebrew.zsh"
-source "$ZDOTDIR/loaders/zsh-syntax-highlighting.zsh"
+dot-files-load homebrew [ -d /opt/homebrew ]
+dot-files-load zsh-syntax-highlighting [ -d "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting" ]
 
-source "$ZDOTDIR/loaders/libpq.zsh"
-source "$ZDOTDIR/loaders/neon.zsh"
-source "$ZDOTDIR/loaders/nvm.zsh"
-source "$ZDOTDIR/loaders/pnpm.zsh"
+dot-files-load libpq [ -d "$HOMEBREW_PREFIX/opt/libpq" ]
+dot-files-load neon [ -f "$HOMEBREW_PREFIX/bin/neon" ]
+dot-files-load nvm [ -d "$HOME/.nvm" ]
+dot-files-load pnpm [ -d "$HOME/Library/pnpm" ]
 
-source "$ZDOTDIR/loaders/powerlevel10k.zsh" # Keep this last
+dot-files-load powerlevel10k [ -d "$HOMEBREW_PREFIX/opt/powerlevel10k" ] # Keep this last
 
 # Aliases
-source "$ZDOTDIR/aliases/eza.zsh"
-source "$ZDOTDIR/aliases/freeport.zsh"
-source "$ZDOTDIR/aliases/kubectlgetall.zsh"
+source "$ZDOTDIR/utils/alias.zsh"
+dot-files-alias eza [ -f "$HOMEBREW_PREFIX/bin/eza" ]
+dot-files-alias freeport
+dot-files-alias kubectlgetall [ -f "$HOMEBREW_PREFIX/bin/kubectl" ]
+
+# Cleanup
+source "$ZDOTDIR/utils/clean-up.zsh"
 
 # Local
 if [ -f "$ZDOTDIR/.zshrc.local" ]; then

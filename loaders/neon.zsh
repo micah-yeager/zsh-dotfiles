@@ -1,13 +1,3 @@
-local DOT_FILES_LOAD_TARGET="neon"
-if ! type "$DOT_FILES_LOAD_TARGET" > /dev/null; then
-  [ "$DOT_FILES_DEBUG" ] && echo "$DOT_FILES_LOAD_TARGET not found, skipping initialization."
-  return
-elif [ "$DOT_FILES_LOADED_NEON" ]; then
-  [ "$DOT_FILES_DEBUG" ] && echo "$DOT_FILES_LOAD_TARGET already loaded, skipping initialization."
-  return
-fi
-export DOT_FILES_LOADED_NEON=true
-
 #compdef neon
 ###-begin-neon-completions-###
 #
