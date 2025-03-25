@@ -19,9 +19,9 @@ source "$ZDOTDIR/config/pnpm.zsh"
 source "$ZDOTDIR/config/powerlevel10k.zsh" # Keep this last
 
 # Aliases
-source "$ZDOTDIR/alias/eza.zsh"
-source "$ZDOTDIR/alias/freeport.zsh"
-source "$ZDOTDIR/alias/kubectlgetall.zsh"
+source "$ZDOTDIR/aliases/eza.zsh"
+source "$ZDOTDIR/aliases/freeport.zsh"
+source "$ZDOTDIR/aliases/kubectlgetall.zsh"
 
 # Local
 if [ -f "$ZDOTDIR/.zshrc.local" ]; then
