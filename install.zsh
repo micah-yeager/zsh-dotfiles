@@ -14,7 +14,7 @@ local INSTALL_DIR="$HOME/dev/zsh-dotfiles"
 vared -p "Where should the dot files be installed? " INSTALL_DIR
 local INSTALL_AUTO_CONFIG_DEPS=y
 vared -p "Should terminal-specific dependencies be auto-installed? " INSTALL_AUTO_CONFIG_DEPS
-local IMPORT_HISTORY=y
+local IMPORT_HISTORY=n
 vared -p "Should existing zsh history be imported? " IMPORT_HISTORY
 
 # Download the dot files.
