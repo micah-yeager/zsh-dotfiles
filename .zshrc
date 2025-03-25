@@ -11,6 +11,7 @@ source "$ZDOTDIR/config/powerlevel10k-preflight.zsh"
 source "$ZDOTDIR/config/homebrew.zsh"
 source "$ZDOTDIR/config/zsh-syntax-highlighting.zsh"
 
+source "$ZDOTDIR/config/libpq.zsh"
 source "$ZDOTDIR/config/neon.zsh"
 source "$ZDOTDIR/config/nvm.zsh"
 source "$ZDOTDIR/config/pnpm.zsh"
