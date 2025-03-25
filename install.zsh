@@ -58,6 +58,8 @@ if [ "$INSTALL_AUTO_CONFIG_DEPS" = "y" ]; then
     curl -fsSL "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf" -O "$TARGET_FONT_DIR/MesloLGS-NF-Bold-Italic.ttf"
   fi
 
+  # pnpm
+  [ -d "$HOME/Library/pnpm" ] || curl -fsSL https://get.pnpm.io/install.sh | sh -
 
   # Homebrew
   [ -d "/opt/homebrew" ] || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -69,8 +71,6 @@ if [ "$INSTALL_AUTO_CONFIG_DEPS" = "y" ]; then
   [ -d "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting" ] || brew install zsh-syntax-highlighting
   # libpq
   [ -d "$HOMEBREW_PREFIX/Cellar/libpq" ] || brew install libpq
-  # pnpm
-  [ -d "$HOME/Library/pnpm" ] || curl -fsSL https://get.pnpm.io/install.sh | sh -
 
   echo "Done."
 else
