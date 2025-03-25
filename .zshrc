@@ -16,7 +16,7 @@ source "$ZDOTDIR/config/neon.zsh"
 source "$ZDOTDIR/config/nvm.zsh"
 source "$ZDOTDIR/config/pnpm.zsh"
 
-source "$ZDOTDIR/config/powerlevel10k.zsh"
+source "$ZDOTDIR/config/powerlevel10k.zsh" # Keep this last
 
 # Aliases
 source "$ZDOTDIR/alias/eza.zsh"
