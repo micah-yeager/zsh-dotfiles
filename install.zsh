@@ -45,16 +45,16 @@ if [ "$INSTALL_AUTO_CONFIG_DEPS" = "y" ]; then
   # Fonts
   local INSTALLED_FONTS=$(system_profiler SPFontsDataType)
   local TARGET_FONT_DIR="$HOME/Library/Fonts"
-  if ! grep -q "MesloLGS-NF-Regular"; then
+  if ! echo "$INSTALLED_FONTS" | grep -q "MesloLGS-NF-Regular"; then
     curl -fsSL "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf" -O "$TARGET_FONT_DIR/MesloLGS-NF-Regular.ttf"
   fi
-  if ! grep -q "MesloLGS-NF-Bold"; then
+  if ! echo "$INSTALLED_FONTS" | grep -q "MesloLGS-NF-Bold"; then
     curl -fsSL "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf" -O "$TARGET_FONT_DIR/MesloLGS-NF-Bold.ttf"
   fi
-  if ! grep -q "MesloLGS-NF-Italic"; then
+  if ! echo "$INSTALLED_FONTS" | grep -q "MesloLGS-NF-Italic"; then
     curl -fsSL "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf" -O "$TARGET_FONT_DIR/MesloLGS-NF-Italic.ttf"
   fi
-  if ! grep -q "MesloLGS-NF-Bold-Italic"; then
+  if ! echo "$INSTALLED_FONTS" | grep -q "MesloLGS-NF-Bold-Italic"; then
     curl -fsSL "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf" -O "$TARGET_FONT_DIR/MesloLGS-NF-Bold-Italic.ttf"
   fi
 
