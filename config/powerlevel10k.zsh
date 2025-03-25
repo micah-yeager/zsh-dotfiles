@@ -1,9 +1,9 @@
-local TARGET="$HOMEBREW_PREFIX/opt/powerlevel10k"
-if [ ! -d "$TARGET" ]; then
-  [ "$DOT_FILES_DEBUG" ] && echo "$TARGET not found, skipping initialization."
+local DOT_FILES_LOAD_TARGET="$HOMEBREW_PREFIX/opt/powerlevel10k"
+if [ ! -d "$DOT_FILES_LOAD_TARGET" ]; then
+  [ "$DOT_FILES_DEBUG" ] && echo "$DOT_FILES_LOAD_TARGET not found, skipping initialization."
   return
 elif [ "$DOT_FILES_LOADED_POWERLEVEL10K" ]; then
-  [ "$DOT_FILES_DEBUG" ] && echo "$TARGET already loaded, skipping initialization."
+  [ "$DOT_FILES_DEBUG" ] && echo "$DOT_FILES_LOAD_TARGET already loaded, skipping initialization."
   return
 fi
 export DOT_FILES_LOADED_POWERLEVEL10K=true
