@@ -19,8 +19,8 @@ function dot-files-alias {
   fi
 
   # Otherwise, execute the loader.
-  echo "\033[37m\033[1m$name:\033[22m aliasing...\033[0m"
+  [ "$DOT_FILES_DEBUG" ] && echo "\033[37m\033[1m$name:\033[22m aliasing...\033[0m"
   source "$loader"
   export "$exported"=true
-  echo "\033[37m\033[1m$name:\033[22m finished aliasing.\033[0m"
+  [ "$DOT_FILES_DEBUG" ] && echo "\033[37m\033[1m$name:\033[22m finished aliasing.\033[0m"
 }
