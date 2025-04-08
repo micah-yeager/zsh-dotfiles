@@ -64,6 +64,8 @@ if [ "$INSTALL_AUTO_CONFIG_DEPS" = "y" ]; then
   # pnpm
   [ -d "$HOME/Library/pnpm" ] || curl -fsSL https://get.pnpm.io/install.sh | sh -
   echo "  Done."
+  # bun
+  [ -f "$HOME/.bun/bin/bun" ] || curl -fsSL https://bun.sh/install | bash
 
   echo "  Installing Hombrew packages..."
   # Homebrew

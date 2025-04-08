@@ -16,6 +16,7 @@ dot-files-load libpq [ -d "$HOMEBREW_PREFIX/opt/libpq" ]
 dot-files-load neon [ -f "$HOMEBREW_PREFIX/bin/neon" ]
 dot-files-load nvm [ -d "$HOME/.nvm" ]
 dot-files-load pnpm [ -d "$HOME/Library/pnpm" ]
+dot-files-load bun [ -f "$HOME/.bun/bin/bun" ]
 
 dot-files-load powerlevel10k [ -d "$HOMEBREW_PREFIX/opt/powerlevel10k" ] # Keep this last
 
